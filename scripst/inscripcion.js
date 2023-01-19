@@ -1,20 +1,10 @@
 //datos
 
 let inscribirse = document.getElementById("texto");
-
-input01.addEventListener("change", (evento) => {
-    console.log("El alumno se llama.", evento.target.value);
-});
-
-input02.addEventListener("change", (evento) => {
-    console.log("Dato de contacto.", evento.target.value);
-
-});
-textArea.addEventListener("change", (evento) => {
-    console.log("Consulta previa:", evento.target.value);
-
-});
-
+let formulario = document.getElementById("formulario")
+let nombre = document.getElementById("input01")
+let email = document.getElementById("input02")
+let textArea = document.getElementById("textArea")
 
 //elecciones
 
@@ -47,10 +37,51 @@ for (const unNivel of experiencia) {
 
 //inscripcion
 
-let felicidades = document.getElementById("boton");
+class Usuario {
+    constructor(nombre, actividad, experiencia, email, comentario) {
+        this.nombre = nombre;
+        this.actividad = actividad;
+        this.experiencia = experiencia;
+        this.email = email;
+        this.comentario = comentario
+    }
+}
 
-felicidades.addEventListener("click", (eventoBoton) => { texto.innerHTML = eventoBoton.target.value + ("<p>Felicidades! Ya formas parte de AcroStudio. Te esperamos para tú primera clase.</p>") });
+let usuarios = []
 
+//Formulario
+
+formulario.addEventListener("submit", (eventoBoton) => {
+    eventoBoton.preventDefault()
+    let nombreUsuario = nombre.value
+    let actividadUsuario = selectActividad.value
+    let experienciaUsuario = selectConocimiento.value
+    let emailUsuario = email.value
+    let comentarioUsuario = textArea.value
+
+    if (nombreUsuario != "" && actividadUsuario != "" && experienciaUsuario != "" && emailUsuario != "") {
+        let usuarioCreado = new Usuario(nombreUsuario, actividadUsuario, experienciaUsuario, emailUsuario, comentarioUsuario)
+        usuarios.push(usuarioCreado)
+        formulario.reset()
+        console.log(usuarios)
+        Swal.fire({
+            title: 'Deseas realizar la incripción?',
+            text: "Esta acción no puede ser revertida",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#C0D966',
+            cancelButtonColor: '#F27979',
+            confirmButtonText: 'Inscribirme!',
+            cancelButtonText: 'Cancelar', 
+            destination: href="../pages/servicios",
+        }).then(() => {
+            if (nombreUsuario != "" && actividadUsuario != "" && experienciaUsuario != "" && emailUsuario != "")
+                Swal.fire(
+                    'Felicidades, ya formas parte de AcroStudio!',
+                    'Te esperamos para tú próxima clase',
+                    'success'
+                )
+    })}})
 
 // recuperar actividad seleccionada
 
@@ -65,4 +96,3 @@ actividadesDisponibles = JSON.parse(miActividadRecuperada);
 console.log("Valor recuperado", {
     actividad5: actividadesDisponibles,
 });
-

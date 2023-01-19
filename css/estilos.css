@@ -55,6 +55,29 @@ header nav ul li a:hover {
 }
 
 /*--main--*/
+/*-----banner-----*/
+
+.banner {
+    background-color: #F27979;
+    background-position: center;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 14px;
+}
+
+.animate__animated.animate__flash {
+
+    --animate-duration: 10s;
+}
+
+#banner {
+    background-color:#F27979;
+    color: white;
+}
+
 /*-----hero-----*/
 .hero {
     background-image: url(../img/fondo.jpeg);
@@ -432,4 +455,12 @@ footer {
         line-height: 36px
     }
 
+}
+
+.dias {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    list-style: none;
+    
 }
