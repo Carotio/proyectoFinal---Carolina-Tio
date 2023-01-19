@@ -26,48 +26,110 @@
             </ul>
         </nav>
     </header>
-    <main id="anotarse">
-        <section class="proyectos">
-            <div class="grid-item primer-item">
-                <img src="../img/aerea.jpeg" alt="Proyecto hack the city">
-            </div>
-            <div class="grid-item segundo-item">
-                <h2>Disciplina</h2>
-                <h3>Acrobacia Aérea</h3>
-                <p>La acrobacia aérea es resultado de un proceso de transformación de distintas disciplinas artísticas y deportivas que combinan la danza contemporánea con las artes circenses, las acrobacias, el ballet y el teatro. Dónde el acto o coreografía se complementa con música y los movimientos de los practicantes.</p>
-                    <a class = "inscripcion" href="./inscripcion.html">Inscribirse</a>
-            </div>
-            <div class="grid-item tercer-item">
-                <h2>Disciplina</h2>
-                <h3>Acrobacia en piso</h3>
-                <p>Es una modalidad circense que se encuentra dentro de las  disciplinas más antiguas.
-                    El acróbata requiere equilibrio para ejecutar los movimientos y mantenerse sobre las manos, la cabeza, o sobre otra persona, ya sea desde el suelo o en otro aparato.</p>
-                    <a class = "inscripcion" href="./inscripcion.html"> 
-                    "Inscribirse"</a>
-            </div>
-            <div class="grid-item cuarto-item">
-                <img src="../img/acroduo.jpeg" alt="Proyecto tiempo en pandemia">
-            </div>
-        </section>
-        <section class="proyectos">
-            <div class="primer-item">
-                <img src="../img/ballet.jpeg" alt="Proyecto energia renovable">
-            </div>
-            <div class="segundo-item">
-                <h2>Disciplina</h2>
-                <h3>Danza Clásica</h3>
-                <p>La danza clásica es una danza convencional que revela las emociones a través de la poesía o el drama de danza. Esta forma está representada por el equilibrio, la dignidad y la precisión del movimiento. Mediante elaborados gestos formales, pasos y poses. Requiere de una técnica precisa.</p>
-                    <a class = "inscripcion" href="./inscripcion.html">Inscribirse</a>
-            </div>
-            <div class="tercer-item">
-                <h2>Disciplina</h2>
-                <h3>Danza Contemporánea</h3>
-                <p>La danza contemporánea surge como una reacción a las formas clásicas y probablemente como una necesidad de expresarse más libremente con el cuerpo. Es una clase de danza en la que se busca expresar una idea, un sentimiento, una emoción, pero mezclando movimientos corporales propios.</p>
-                    <a class = "inscripcion" href="./inscripcion.html">Inscribirse</a>
-            </div>
-            <div class="cuarto-item">
-                <img src="../img/danza.jpeg" alt="Proyecto Luminarias autónomas">
-            </div>
+    <main>
+        <div id="anotarse">
+            <section class="proyectos">
+                <div class="grid-item primer-item">
+                    <img src="../img/aerea.jpeg" alt="Proyecto hack the city">
+                </div>
+                <div class="grid-item segundo-item">
+                    <h2>Disciplina<button id="almanaque" class="abrir"><i class="fa-regular fa-comment-dots"></i>
+                        📅
+                    </button></h2>
+                    <h3>Acrobacia Aérea</h3>
+                    <p>La acrobacia aérea es resultado de un proceso de transformación de distintas disciplinas
+                        artísticas y deportivas que combinan la danza contemporánea con las artes circenses, las
+                        acrobacias, el ballet y el teatro. Dónde el acto o coreografía se complementa con música y los
+                        movimientos de los practicantes.</p>
+                    <a id="btn" class="inscripcion" href="./inscripcion.html">Inscribirse</a>
+                </div>
+                <div class="grid-item tercer-item">
+                    <h2>Disciplina<button id="almanaque1" class="abrir"><i class="fa-regular fa-comment-dots"></i>
+                        📅
+                    </button></h2>
+                    <h3>Acrobacia en piso</h3>
+                    <p>Es una modalidad circense que se encuentra dentro de las disciplinas más antiguas.
+                        El acróbata requiere equilibrio para ejecutar los movimientos y mantenerse sobre las manos, la
+                        cabeza, o sobre otra persona, ya sea desde el suelo o en otro aparato.</p>
+                    <a class="inscripcion" href="./inscripcion.html">
+                        "Inscribirse"</a>
+                </div>
+                <div class="grid-item cuarto-item">
+                    <img src="../img/acroduo.jpeg" alt="Proyecto tiempo en pandemia">
+                </div>
+            </section>
+            <section class="proyectos">
+                <div class="primer-item">
+                    <img src="../img/ballet.jpeg" alt="Proyecto energia renovable">
+                </div>
+                <div class="segundo-item">
+                    <h2>Disciplina <button id="almanaque2" class="abrir"><i class="fa-regular fa-comment-dots"></i>
+                        📅
+                    </button></h2> 
+                    <h3>Danza Clásica</h3>
+                    <p>La danza clásica es una danza convencional que revela las emociones a través de la poesía o el
+                        drama de danza. Esta forma está representada por el equilibrio, la dignidad y la precisión del
+                        movimiento. Mediante elaborados gestos formales, pasos y poses. Requiere de una técnica precisa.
+                    </p>
+                    <a class="inscripcion" href="./inscripcion.html">Inscribirse</a>
+                </div>
+                <div class="tercer-item">
+                    <h2>Disciplina <button id="almanaque3" class="abrir"><i class="fa-regular fa-comment-dots"></i>
+                        📅
+                    </button></h2>
+                    <h3>Danza Contemporánea</h3>
+                    <p>La danza contemporánea surge como una reacción a las formas clásicas y probablemente como una
+                        necesidad de expresarse más libremente con el cuerpo. Es una clase de danza en la que se busca
+                        expresar una idea, un sentimiento, una emoción, pero mezclando movimientos corporales propios.
+                    </p>
+                    <a class="inscripcion" href="./inscripcion.html">Inscribirse</a>
+                </div>
+                <div class="cuarto-item">
+                    <img src="../img/danza.jpeg" alt="Proyecto Luminarias autónomas">
+                </div>
+            </section>
+        </div>
+        <section>
+            <dialog id="fechas" class="fechas">
+                Horarios
+                <div id="close">&times;</div>
+
+                </div>
+                <div>
+                    <li>Lunes</li>
+                    <li>Martes</li>
+                    <li>Miércoles</li>
+                    <li>Jueves</li>
+                    <li>Viernes</li>
+                </div>
+                <div>
+                    <ul>
+                        <li>10:00 / 12:00</li>
+                        <li>-</li>
+                        <li>10:00 / 12:00</li>
+                        <li>-</li>
+                        <li>10:00 / 12:00</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>-</li>
+                        <li>15:00 / 17:00</li>
+                        <li>-</li>
+                        <li>15:00 / 17:00</li>
+                        <li>-</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>19:00 / 21:00</li>
+                        <li>-</li>
+                        <li>19:00 / 21:00</li>
+                        <li>-</li>
+                        <li>19:00 / 21:00</li>
+                    </ul>
+                </div>
+            </dialog>
         </section>
     </main>
     <footer>
@@ -78,6 +140,7 @@
         </div>
     </footer>
     <script src="../scripst/servicios.js"></script>
+    <script src="../scripst/agenda.js"></script>
 </body>
 
 </html>

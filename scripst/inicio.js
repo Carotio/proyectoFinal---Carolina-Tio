@@ -51,7 +51,6 @@ arancel.addEventListener("change", () => {
                 icon: 'info',
                 title: 'Por favor ingrese una opción válida',
                 text: "Puedes consultar el calendario",
-                //footer: '<a href="">Calendario</a>'
             })
         };
     })

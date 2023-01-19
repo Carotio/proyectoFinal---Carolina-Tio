@@ -10,7 +10,6 @@ let accion = document.querySelectorAll(".inscripcion");
 }})
 
 //datos
-
 class Actividad {
     constructor(disciplina, area, dificultad, elementoExtra, enCurso) {
         this.disciplina = disciplina;
@@ -25,6 +24,9 @@ class Actividad {
 }
 let actividadesDisponibles = [];
 
+
+// local Storage
+
 actividadesDisponibles.push(new Actividad("Acrobacia", "aérea", "media", false, true));
 actividadesDisponibles.push(new Actividad("Danza", "clásica", "alta", true, true));
 
@@ -36,6 +38,3 @@ console.log("Almacenar actividades disponisbles", {
 });
 
 localStorage.setItem("actividadesEnCurso", actividadesJSONFormat);
-
-
-
