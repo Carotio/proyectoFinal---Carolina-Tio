@@ -72,8 +72,7 @@ formulario.addEventListener("submit", (eventoBoton) => {
             confirmButtonColor: '#C0D966',
             cancelButtonColor: '#F27979',
             confirmButtonText: 'Inscribirme!',
-            cancelButtonText: 'Cancelar', 
-            destination: href="../pages/servicios",
+            cancelButtonText: 'Cancelar',
         }).then(() => {
             if (nombreUsuario != "" && actividadUsuario != "" && experienciaUsuario != "" && emailUsuario != "")
                 Swal.fire(
@@ -81,11 +80,50 @@ formulario.addEventListener("submit", (eventoBoton) => {
                     'Te esperamos para tú próxima clase',
                     'success'
                 )
-    })}})
+        })
+    }
+    // guardar usuario
 
-// recuperar actividad seleccionada
+    let unUsuarioJSONFormat = JSON.stringify(usuarios);
+    console.log("Resultado de convertirlo", {
+        resultado: unUsuarioJSONFormat
+    });
+    localStorage.setItem("datos", unUsuarioJSONFormat);
+})
 
-let miActividadRecuperada = localStorage.getItem("actividadesEnCurso");
+// recuperar usuario
+
+let unUsuarioRecuperado = localStorage.getItem("datos");
+console.log("Recupero los datos", {
+    recuperado: unUsuarioRecuperado,
+});
+usuarios = JSON.parse(unUsuarioRecuperado);
+console.log("El objeto es", {
+    usuarios: unUsuarioRecuperado,
+});
+
+//rellenar formulario
+/* function getUsuarios (){
+    return usuarios;
+}
+
+rellenar ();
+
+function rellenar (){
+    let list = getUsuarios ()
+    form =  document.getElementById ("formulario");
+
+    form.innerHTML = '';
+    for (i = 0; i< list.length; i++ ){
+        let campo = form.insertText (i),
+            nombre = text.insertext (1),
+
+        input01.textContent = text(1).name
+    }} */
+
+/*recuperar actividad seleccionada: En esta parte queria que cuando en la pages de servicios, al hacer click a inscribir en el boton de una actividad en particular. Esa se precargara en el formulario al iniciarlo. Pero no pude terminar*/
+
+/*  let miActividadRecuperada = localStorage.getItem("actividadesEnCurso");
 
 console.log("Local storage", {
     recuperado: miActividadRecuperada,
@@ -96,3 +134,4 @@ actividadesDisponibles = JSON.parse(miActividadRecuperada);
 console.log("Valor recuperado", {
     actividad5: actividadesDisponibles,
 });
+  */
