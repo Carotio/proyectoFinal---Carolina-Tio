@@ -8,12 +8,12 @@ fetch("https://api.kanye.rest")
 
         let frase = document.getElementById("banner")
         frase.textContent = json.quote;
-        
+
 
         console.log(json);
     })
 
-    .catch(error => console.log(error)); 
+    .catch(error => console.log(error));
 
 
 // evento
@@ -27,33 +27,42 @@ eventoBoton2.addEventListener("mousemove", () => { console.log("El usuario pasó
 
 
 // aranceles
-/*  La intención era que el usuario pudiera ver de antemano el precio según la cantidad de veces a la semana que quiera concurrir, pero por alguna razón no me hace el cálculo */
-let resultado = 0;
 
-function valor(precio, cantidad) {
-    if (cantidad === 0) { return 0; }
-    else {
-        return (precio + (cantidad * 200))
-    }
-}
 
 let arancel = document.getElementById("input03");
-resultado = valor(1200, (arancel.value));
-arancel.addEventListener("change", () => {
-    veces.textContent = "Total abonar  $" + resultado;
-    console.log(resultado)
+let veces = document.getElementById("veces");
 
-    texto.addEventListener("onfocus", (e) => {
-        eventoBoton.preventDefault(e)
+    // Cálculo del costo
+function costo(precio, cantidad) {
+    if (cantidad === 0) {
+        return 0;
+    }
+    return precio + cantidad * 200;
+}
 
-        if (arancel != "1" || arancel != "2" || arancel != "3" || arancel != "4" || arancel != "5") {
-            Swal.fire({
-                icon: 'info',
-                title: 'Por favor ingrese una opción válida',
-                text: "Puedes consultar el calendario",
-            })
-        };
-    })
+arancel.addEventListener("keyup", (event) => {
+
+    if (event.target.value === "") {
+        return;
+    }
+    let valor = -1;
+    try {
+        valor = parseInt(event.target.value);
+    } catch (e) {
+    }
+
+    if (valor <= 0 || valor > 5) {
+        Swal.fire({
+            icon: 'info',
+            title: 'Por favor ingrese una opción válida',
+            text: "Puedes consultar el calendario",
+        });
+        return;
+    }
+
+    let resultado = costo(1200, valor);
+    veces.innerText = "Total abonar  $" + resultado;
+
 });
 
 

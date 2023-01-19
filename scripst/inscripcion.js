@@ -84,46 +84,44 @@ formulario.addEventListener("submit", (eventoBoton) => {
     }
     // guardar usuario
 
-    let unUsuarioJSONFormat = JSON.stringify(usuarios);
-    console.log("Resultado de convertirlo", {
-        resultado: unUsuarioJSONFormat
-    });
-    localStorage.setItem("datos", unUsuarioJSONFormat);
-})
+        let unUsuarioJSONFormat = JSON.stringify(usuarios);
+        console.log("Resultado de convertirlo", {
+            resultado: unUsuarioJSONFormat
+        });
+        localStorage.setItem("datos", unUsuarioJSONFormat);
+    }
+)
+
 
 // recuperar usuario
 
-let unUsuarioRecuperado = localStorage.getItem("datos");
-console.log("Recupero los datos", {
-    recuperado: unUsuarioRecuperado,
-});
-usuarios = JSON.parse(unUsuarioRecuperado);
-console.log("El objeto es", {
-    usuarios: unUsuarioRecuperado,
-});
+    let unUsuarioRecuperado = localStorage.getItem("datos");
+    console.log("Recupero los datos", {
+        recuperado: unUsuarioRecuperado,
+    });
+        usuarios = JSON.parse(unUsuarioRecuperado);
+        console.log("El objeto es", {
+            usuarios: unUsuarioRecuperado,
+        });
 
-//rellenar formulario
-/* function getUsuarios (){
-    return usuarios;
-}
 
-rellenar ();
 
-function rellenar (){
-    let list = getUsuarios ()
-    form =  document.getElementById ("formulario");
+// No logré encontrar porque da undefined
+nombre.value = usuarios.nombre;
+selectActividad.value = usuarios.actividad
+selectConocimiento.value = usuarios.experiencia
+email.value = usuarios.email
+textArea.value = usuarios.comentario
 
-    form.innerHTML = '';
-    for (i = 0; i< list.length; i++ ){
-        let campo = form.insertText (i),
-            nombre = text.insertext (1),
 
-        input01.textContent = text(1).name
-    }} */
 
-/*recuperar actividad seleccionada: En esta parte queria que cuando en la pages de servicios, al hacer click a inscribir en el boton de una actividad en particular. Esa se precargara en el formulario al iniciarlo. Pero no pude terminar*/
 
-/*  let miActividadRecuperada = localStorage.getItem("actividadesEnCurso");
+/*recuperar actividad seleccionada: 
+En esta parte queria que cuando en la pages de servicios, 
+Se haga click a inscribir en el boton de una actividad en particular. 
+Esa se precargara en el formulario al iniciarlo. Pero no pude terminar*/
+
+let miActividadRecuperada = localStorage.getItem("actividadesEnCurso");
 
 console.log("Local storage", {
     recuperado: miActividadRecuperada,
@@ -134,4 +132,3 @@ actividadesDisponibles = JSON.parse(miActividadRecuperada);
 console.log("Valor recuperado", {
     actividad5: actividadesDisponibles,
 });
-  */
