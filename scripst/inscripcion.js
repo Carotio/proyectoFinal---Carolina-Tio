@@ -1,5 +1,4 @@
 //datos
-
 let inscribirse = document.getElementById("texto");
 let formulario = document.getElementById("formulario")
 let nombre = document.getElementById("input01")
@@ -7,7 +6,6 @@ let email = document.getElementById("input02")
 let textArea = document.getElementById("textArea")
 
 //elecciones
-
 let disciplina = [
     "Acrobacia Aérea",
     "Acrobacia en Piso",
@@ -47,7 +45,6 @@ class Usuario {
     }
 }
 
-
 //Formulario
 
 formulario.addEventListener("submit", (eventoBoton) => {
@@ -57,7 +54,6 @@ formulario.addEventListener("submit", (eventoBoton) => {
     let experienciaUsuario = selectConocimiento.value
     let emailUsuario = email.value
     let comentarioUsuario = textArea.value
-
     if (nombreUsuario != "" && actividadUsuario != "" && experienciaUsuario != "" && emailUsuario != "") {
         let usuarioCreado = new Usuario(nombreUsuario, actividadUsuario, experienciaUsuario, emailUsuario, comentarioUsuario)
         Swal.fire({
@@ -78,7 +74,6 @@ formulario.addEventListener("submit", (eventoBoton) => {
                 )
                 formulario.reset()
                 // guardar usuario
-
                 let unUsuarioJSONFormat = JSON.stringify(usuarioCreado);
                 localStorage.setItem("datos", unUsuarioJSONFormat);
             }
@@ -109,7 +104,5 @@ Se haga click a inscribir en el boton de una actividad en particular.
 Esa se precargara en el formulario al iniciarlo. Pero no pude terminar*/
 
 let miActividadRecuperada = localStorage.getItem("actividadesEnCurso");
-;
-
 actividadesDisponibles = JSON.parse(miActividadRecuperada);
-;
+
