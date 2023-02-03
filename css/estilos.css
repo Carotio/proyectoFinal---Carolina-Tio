@@ -60,7 +60,7 @@ header nav ul li a:hover {
 .banner {
     background-color: #F27979;
     background-position: center;
-    height: 60px;
+    height: 80px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -75,6 +75,7 @@ header nav ul li a:hover {
 
 #banner {
     background-color:#F27979;
+    justify-content: center;
     color: white;
 }
 

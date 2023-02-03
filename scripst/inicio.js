@@ -2,28 +2,28 @@
 
 //Como arreglo a futuro se puede traducir al español.
 
-fetch("https://api.kanye.rest")
-    .then((response) => response.json())
-    .then((json) => {
+let frase = document.getElementById("banner")
+obtenerFrase().then(b => frase.textContent = b)
 
-        let frase = document.getElementById("banner")
-        frase.textContent = json.quote;
+async function obtenerFrase() {
+
+    return await fetch("https://api.kanye.rest")
+        .then((response) => response.json())
+        .then(value => value.quote)
+
+}
 
 
-        console.log(json);
-    })
-
-    .catch(error => console.log(error));
 
 
 // evento
 let eventoBoton = document.getElementById("service");
 
-eventoBoton.addEventListener("mousemove", () => { console.log("El usuario pasó por leer más de servicios"); });
+eventoBoton.addEventListener("mousemove", () => { });
 
 let eventoBoton2 = document.getElementById("info");
 
-eventoBoton2.addEventListener("mousemove", () => { console.log("El usuario pasó por leer más información"); });
+eventoBoton2.addEventListener("mousemove", () => { });
 
 
 // aranceles
@@ -32,7 +32,7 @@ eventoBoton2.addEventListener("mousemove", () => { console.log("El usuario pasó
 let arancel = document.getElementById("input03");
 let veces = document.getElementById("veces");
 
-    // Cálculo del costo
+// Cálculo del costo
 function costo(precio, cantidad) {
     if (cantidad === 0) {
         return 0;
@@ -41,9 +41,10 @@ function costo(precio, cantidad) {
 }
 
 arancel.addEventListener("keyup", (event) => {
-
     if (event.target.value === "") {
+        5;
         return;
+
     }
     let valor = -1;
     try {
@@ -51,11 +52,11 @@ arancel.addEventListener("keyup", (event) => {
     } catch (e) {
     }
 
-    if (valor <= 0 || valor > 5) {
+    if (valor != 1 && valor != 2 && valor != 3 && valor != 4 && valor != 5) {
         Swal.fire({
             icon: 'info',
-            title: 'Por favor ingrese una opción válida',
-            text: "Puedes consultar el calendario",
+            title: 'Por favor ingrese los días de la semana',
+            text: "Puedes concurrir de 1 a 5 días",
         });
         return;
     }

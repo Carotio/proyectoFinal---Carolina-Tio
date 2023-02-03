@@ -47,7 +47,6 @@ class Usuario {
     }
 }
 
-let usuarios = []
 
 //Formulario
 
@@ -61,9 +60,6 @@ formulario.addEventListener("submit", (eventoBoton) => {
 
     if (nombreUsuario != "" && actividadUsuario != "" && experienciaUsuario != "" && emailUsuario != "") {
         let usuarioCreado = new Usuario(nombreUsuario, actividadUsuario, experienciaUsuario, emailUsuario, comentarioUsuario)
-        usuarios.push(usuarioCreado)
-        formulario.reset()
-        console.log(usuarios)
         Swal.fire({
             title: 'Deseas realizar la incripción?',
             text: "Esta acción no puede ser revertida",
@@ -74,44 +70,35 @@ formulario.addEventListener("submit", (eventoBoton) => {
             confirmButtonText: 'Inscribirme!',
             cancelButtonText: 'Cancelar',
         }).then(() => {
-            if (nombreUsuario != "" && actividadUsuario != "" && experienciaUsuario != "" && emailUsuario != "")
+            if (nombreUsuario != "" && actividadUsuario != "" && experienciaUsuario != "" && emailUsuario != "") {
                 Swal.fire(
                     'Felicidades, ya formas parte de AcroStudio!',
                     'Te esperamos para tú próxima clase',
                     'success'
                 )
+                formulario.reset()
+                // guardar usuario
+
+                let unUsuarioJSONFormat = JSON.stringify(usuarioCreado);
+                localStorage.setItem("datos", unUsuarioJSONFormat);
+            }
+
         })
     }
-    // guardar usuario
-
-        let unUsuarioJSONFormat = JSON.stringify(usuarios);
-        console.log("Resultado de convertirlo", {
-            resultado: unUsuarioJSONFormat
-        });
-        localStorage.setItem("datos", unUsuarioJSONFormat);
-    }
-)
-
+});
 
 // recuperar usuario
 
-    let unUsuarioRecuperado = localStorage.getItem("datos");
-    console.log("Recupero los datos", {
-        recuperado: unUsuarioRecuperado,
-    });
-        usuarios = JSON.parse(unUsuarioRecuperado);
-        console.log("El objeto es", {
-            usuarios: unUsuarioRecuperado,
-        });
+let unUsuarioRecuperado = localStorage.getItem("datos");
+if (unUsuarioRecuperado) {
+    let usuarioRecuperado = JSON.parse(unUsuarioRecuperado);
+    nombre.value = usuarioRecuperado.nombre;
+    selectActividad.value = usuarioRecuperado.actividad
+    selectConocimiento.value = usuarioRecuperado.experiencia
+    email.value = usuarioRecuperado.email
+    textArea.value = usuarioRecuperado.comentario
+}
 
-
-
-// No logré encontrar porque da undefined
-nombre.value = usuarios.nombre;
-selectActividad.value = usuarios.actividad
-selectConocimiento.value = usuarios.experiencia
-email.value = usuarios.email
-textArea.value = usuarios.comentario
 
 
 
@@ -122,13 +109,7 @@ Se haga click a inscribir en el boton de una actividad en particular.
 Esa se precargara en el formulario al iniciarlo. Pero no pude terminar*/
 
 let miActividadRecuperada = localStorage.getItem("actividadesEnCurso");
-
-console.log("Local storage", {
-    recuperado: miActividadRecuperada,
-});
+;
 
 actividadesDisponibles = JSON.parse(miActividadRecuperada);
-
-console.log("Valor recuperado", {
-    actividad5: actividadesDisponibles,
-});
+;

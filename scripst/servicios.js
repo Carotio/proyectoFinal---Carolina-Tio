@@ -4,10 +4,9 @@ let service = document.getElementById("anotarse");
 
 service.addEventListener("click", (event) => {
 
-let accion = document.querySelectorAll(".inscripcion");
-    for (const unaAccion of accion) {
-        console.log("El usuraio hizo click");
-}})
+    let accion = document.querySelectorAll(".inscripcion");
+    for (const unaAccion of accion);
+})
 
 // Agenda    
 
@@ -15,37 +14,37 @@ let accion = document.querySelectorAll(".inscripcion");
 Intenté hacer una agenda que se mostrara los días y pudieras seleccionar los horarios. 
 Al hacer esto te mandaba al formulario de inscripción con la actividad selecionada ya precargada por el localStorage. */
 
-const icono = document.getElementById ("almanaque")
-const icono1 = document.getElementById ("almanaque1")
-const icono2 = document.getElementById ("almanaque2")
-const icono3 = document.getElementById ("almanaque3")
-const cerrar = document.getElementById ("close")
-const dias = document.getElementById ("fechas")
+const icono = document.getElementById("almanaque")
+const icono1 = document.getElementById("almanaque1")
+const icono2 = document.getElementById("almanaque2")
+const icono3 = document.getElementById("almanaque3")
+const cerrar = document.getElementById("close")
+const dias = document.getElementById("fechas")
 
 
-icono.addEventListener ("click", () => {
-    dias.showModal ()
+icono.addEventListener("click", () => {
+    dias.showModal()
 })
-cerrar.addEventListener ("click", () => {
-    dias.close ()
+cerrar.addEventListener("click", () => {
+    dias.close()
 })
-icono1.addEventListener ("click", () => {
-    dias.showModal ()
+icono1.addEventListener("click", () => {
+    dias.showModal()
 })
-cerrar.addEventListener ("click", () => {
-    dias.close ()
+cerrar.addEventListener("click", () => {
+    dias.close()
 })
-icono2.addEventListener ("click", () => {
-    dias.showModal ()
+icono2.addEventListener("click", () => {
+    dias.showModal()
 })
-cerrar.addEventListener ("click", () => {
-    dias.close ()
+cerrar.addEventListener("click", () => {
+    dias.close()
 })
-icono3.addEventListener ("click", () => {
-    dias.showModal ()
+icono3.addEventListener("click", () => {
+    dias.showModal()
 })
-cerrar.addEventListener ("click", () => {
-    dias.close ()
+cerrar.addEventListener("click", () => {
+    dias.close()
 })
 
 
@@ -71,7 +70,7 @@ actividadesDisponibles.push(new Actividad("Danza", "clásica", "alta", true, tru
 
 
 let actividadesJSONFormat = JSON.stringify(actividadesDisponibles);
-console.log("Almacenar actividades disponisbles", {
+{
     resultado: actividadesJSONFormat
-});
+};
 localStorage.setItem("actividadesEnCurso", actividadesJSONFormat);
